@@ -41,6 +41,12 @@ _dmthin_check_fs()
 	_check_scratch_fs $DMTHIN_VOL_DEV
 }
 
+_dmthin_cycle_mount()
+{
+	$UMOUNT_PROG $SCRATCH_MNT > /dev/null 2>&1
+	_dmthin_mount
+}
+
 # Set up a dm-thin device on $SCRATCH_DEV
 #
 # All arguments are optional, and in this order; defaults follows:
